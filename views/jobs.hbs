@@ -1,0 +1,24 @@
+<div class='container'>
+    <h1>CRUD</h1>
+    <h2>{{title}}</h2>
+    <a href="/jobs/create-form" class='btn btn-success'>Create Job</a>
+    <br /><br />
+    <table class='table'>
+        <tr>
+            <th>ID</th>
+            <th>Position</th>
+            <th>Company</th>
+        </tr>
+        {{#each jobs}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.position}}</td>
+            <td>{{this.company}}</td>
+            <td>
+                <a href="/jobs/edit-form/{{this.id}}" class="btn btn-info btn-sm">Edit</a>
+                <a href="/jobs/delete/{{this.id}}" class="btn btn-danger btn-sm">Delete</a>
+            </td>
+        </tr>
+        {{/each}}
+    </table>
+</div>
